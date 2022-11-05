@@ -27,7 +27,7 @@ class Item
   end 
 
   def to_s
-    "#{self.name}:#{self.price}:#{self.weigth}"
+    "Назва товару:#{self.name}; Ціна:#{self.price} грн.; Вага:#{self.weigth} кг.;"
   end
 
   private

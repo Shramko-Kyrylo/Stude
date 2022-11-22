@@ -10,9 +10,9 @@ class Item
     end    
   end
 
-  def initialize(options={})
+  def initialize(name, options={})
     @real_price  = options[:price]
-    @name   = options[:name]
+    @name   = name
   end
 
   attr_accessor :real_price, :name
@@ -27,7 +27,7 @@ class Item
   end 
 
   def to_s
-    "Назва товару:#{self.name}; Ціна:#{self.price} грн.; Вага:#{self.weigth} кг.;"
+    "#{self.name}: #{self.price}: #{self.weigth}"
   end
 
   private

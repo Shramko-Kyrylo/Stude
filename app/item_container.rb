@@ -42,7 +42,7 @@ module ItemContainer
     private
 
       def show_all_items_with_name(n)
-        @items.map { |i| i if n == i.name }.delete_if { |i| i.nil? }
+        @items.map { |i| i.to_s if n == i.name }.delete_if { |i| i.nil? }
       end
 
   end

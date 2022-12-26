@@ -13,24 +13,16 @@ StoreApplication.config do |app|
 
 end 
 
-unless StoreApplication.frozen?
-  StoreApplication.name = 'My name'
-end
-StoreApplication::Admin.email = 'lkoigogo'
+#unless StoreApplication.frozen?
+#  StoreApplication.name = 'My name'
+#end
+#StoreApplication::Admin.email = 'lkoigogo'
 
 @items =[]
 @items << AntiqueItem.new("pc", price: 305, weigth: 60)
 @items << RealItem.new({price: 200, weigth: 100, name: "car" })
 @items << RealItem.new({price: 100, weigth: 49, name: "book" })
 
-
-
-cart = Cart.new('roman')
-cart.add_item RealItem.new({price: 200, weigth: 100, name: "car" })
-cart.add_item RealItem.new({price: 250, weigth: 100, name: "car" })
-cart.add_item RealItem.new({price: 220, weigth: 100, name: "car" })
-cart.add_item RealItem.new({price: 250, weigth: 100, name: "cap" })
-
-method = 'all_cars'
-#p cart.send(method)
-
+order = Order.new
+order.place
+puts order.placed_at.strftime('%b%-d,%Y %H:%M:%S')
